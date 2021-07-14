@@ -3,7 +3,7 @@ import React from 'react'
 export const InputGroup = ({ type, onChange, options, label }) => {
     return (
         <>
-            {label && <label>{label}</label>}
+            {label && <label data-testid="inputGroupLabel">{label}</label>}
             <form onChange={onChange}>
                 {Object.values(options).map(
                     ({ category, value, defaultChecked, label }) => {
