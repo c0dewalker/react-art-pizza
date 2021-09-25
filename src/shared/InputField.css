@@ -1,0 +1,31 @@
+.input {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--col-grey-200);
+    border-radius: 0.5rem;
+    padding: 0.75em;
+    outline: none;
+}
+
+.input-wrapper:not(:first-of-type) {
+    margin-top: 1rem;
+}
+
+.input:focus {
+    border-color: var(--col-grey-400);
+}
+
+.input::placeholder {
+    color: var(--col-grey-400);
+    vertical-align: middle;
+}
+
+.input.invalid {
+    color: var(--col-error);
+    border-color: var(--col-error);
+}
+
+.error-message {
+    color: var(--col-error);
+    margin-top: calc(0.15rem + 0.25 * var(--padding));
+}

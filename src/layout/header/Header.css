@@ -1,0 +1,37 @@
+.header {
+    box-shadow: 0px 0px 2px 0px #2E313726;
+    box-shadow: 0px 3px 4px 0px #2E31370D;
+}
+
+.header-wrapper {
+    position: relative;
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    line-height: 2.4rem;
+    font-size: 1.8rem;
+}
+
+.logo-icon {
+    margin-right: 0.5rem;
+}
+
+.logo-text--primary {
+    color: var(--col-primary);
+    margin-right: 0.2rem;
+}
+
+.logo-text--secondary {
+    color: var(--col-secondary);
+}
+
+.header .rightElement {
+    margin-left: auto;
+}
