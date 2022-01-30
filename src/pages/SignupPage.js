@@ -1,12 +1,11 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { Header } from './layout/header/Header'
-import { Screen } from './layout/Screen'
-import { Section } from './layout/Section'
-import { InputField } from './shared/InputField'
+import { Header } from '../layout/header/Header'
+import { Main } from '../layout/Main'
+import { Section } from '../layout/Section'
+import { InputField } from '../shared/InputField'
 import { useForm } from 'react-hook-form'
 
-export const Signup = () => {
+export const SignupPage = () => {
     const { register, handleSubmit, formState } = useForm()
     const { errors } = formState
 
@@ -17,7 +16,7 @@ export const Signup = () => {
     return (
         <>
             <Header rightElement="logout">Signup</Header>
-            <Screen>
+            <Main>
                 <Section>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <InputField
@@ -60,7 +59,7 @@ export const Signup = () => {
                         </div>
                     </form>
                 </Section>
-            </Screen>
+            </Main>
         </>
     )
 }

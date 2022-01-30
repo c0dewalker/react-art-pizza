@@ -1,15 +1,14 @@
-import React from 'react'
-import { Screen } from './layout/Screen'
-import { Header } from './layout/header/Header'
-import { InputField } from './'
-import { Divider } from './layout/Devider'
-import './PaymentForm.css'
+import { Main } from '../layout/Main'
+import { Header } from '../layout/header/Header'
+import { InputField } from '../index'
+import { Divider } from '../layout/Devider'
+import '../styles/PaymentForm.css'
 
 export const PaymentForm = () => {
     return (
         <>
             <Header>Complete your order</Header>
-            <Screen>
+            <Main>
                 <div className="container">
                     <h2 className="address-heading h4">Address</h2>
 
@@ -32,7 +31,7 @@ export const PaymentForm = () => {
                     <InputField type="text" placeholder="Name" />
                     <Divider />
                 </div>
-            </Screen>
+            </Main>
         </>
     )
 }

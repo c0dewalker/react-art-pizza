@@ -1,17 +1,17 @@
-import { PizzaConstructor } from './PizzaConstructor'
+import { PizzaConstructor } from './pages/PizzaConstructor/PizzaConstructor'
 import { Switch, Route } from 'react-router-dom'
-import { Login, Signup, Orders, PageNotFound } from './'
-import { PaymentForm } from './PaymentForm'
+import { LoginPage, SignupPage, Orders, PageNotFound } from './'
+import { PaymentForm } from './pages/PaymentForm'
 
 export const App = () => {
     return (
         <>
             <Switch>
                 <Route path="/login">
-                    <Login />
+                    <LoginPage />
                 </Route>
                 <Route path="/signup">
-                    <Signup />
+                    <SignupPage />
                 </Route>
                 <Route path="/orders">
                     <Orders />

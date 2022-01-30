@@ -1,128 +1,96 @@
 export const BASE_PRICE = 200
 
 export const data = {
-    size: {
-        regular: {
-            label: '30 cm',
-            value: 'regular',
-            category: 'size',
-            price: 0,
-            defaultChecked: true
+    sizes: [
+        {
+            value: '30 cm',
+            price: 0
         },
-        big: {
-            label: '35 cm',
-            value: 'big',
-            category: 'size',
-            price: 50,
-            defaultChecked: false
+        {
+            value: '35 cm',
+            price: 50
         }
-    },
-    bread: {
-        fluffy: {
-            label: 'fluffy',
+    ],
+    dough: [
+        {
             value: 'fluffy',
-            category: 'bread',
-            price: 0,
-            defaultChecked: true
+            price: 0
         },
-        thin: {
-            label: 'thin',
+        {
             value: 'thin',
-            category: 'bread',
-            price: 0,
-            defaultChecked: false
+            price: 0
         }
-    },
-    sauce: {
-        tomato: {
-            label: 'tomato',
+    ],
+    sauces: [
+        {
             value: 'tomato',
-            category: 'sauce',
-            price: 0,
-            defaultChecked: true
+            price: 0
         },
-        white: {
-            label: 'white',
-            value: 'white',
-            category: 'sauce',
-            price: 0,
-            defaultChecked: false
+        {
+            value: 'mayonnaise',
+            price: 0
         },
-        hot: {
-            label: 'hot',
+        {
             value: 'hot',
-            category: 'sauce',
-            price: 0,
-            defaultChecked: false
-        }
-    },
-    cheese: {
-        mozzarella: {
-            label: 'mozzarella',
-            value: 'mozzarella',
-            category: 'cheese',
-            price: 29,
-            defaultChecked: false
+            price: 0
         },
-        cheddar: {
-            label: 'cheddar',
-            value: 'cheddar',
-            category: 'cheese',
-            price: 29,
-            defaultChecked: false
-        },
-        dorBlue: {
-            label: 'dor blue',
-            value: 'dorBlue',
-            category: 'cheese',
-            price: 29,
-            defaultChecked: false
-        }
-    },
-    vegetables: {
-        tomato: {
-            label: 'tomato',
-            value: 'tomato',
-            category: 'vegetables',
-            price: 29,
-            defaultChecked: false
-        },
-        mushrooms: {
-            label: 'mushrooms',
+        {
             value: 'mushrooms',
-            category: 'vegetables',
-            price: 29,
-            defaultChecked: false
+            price: 0
         },
-        paprika: {
-            label: 'paprika',
+        {
+            value: 'garlic',
+            price: 0
+        },
+        {
+            value: 'sweet-and-sour',
+            price: 0
+        },
+        {
+            value: 'mustard',
+            price: 0
+        }
+    ],
+    cheese: [
+        {
+            value: 'mozzarella',
+            price: 29
+        },
+        {
+            value: 'cheddar',
+            price: 29
+        },
+        {
+            value: 'dor blue',
+            price: 29
+        }
+    ],
+    vegetables: [
+        {
+            value: 'tomato',
+            price: 29
+        },
+        {
+            value: 'mushrooms',
+            price: 29
+        },
+        {
             value: 'paprika',
-            category: 'vegetables',
-            price: 29,
-            defaultChecked: false
+            price: 29
         }
-    },
-    meat: {
-        bacon: {
-            label: 'bacon',
+    ],
+    meat: [
+        {
             value: 'bacon',
-            category: 'meat',
-            price: 29,
-            defaultChecked: false
+            price: 29
         },
-        chicken: {
-            label: 'chicken',
+        {
             value: 'chicken',
-            category: 'meat',
-            price: 29,
-            defaultChecked: false
+            price: 29
         },
-        ham: {
-            label: 'ham',
+        {
             value: 'ham',
-            category: 'meat',
-            price: 29,
-            defaultChecked: false
+            price: 29
         }
-    }
+    ]
 }

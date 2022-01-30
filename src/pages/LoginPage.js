@@ -1,13 +1,14 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import { Header } from './layout/header/Header'
-import { Screen } from './layout/Screen'
-import { InputField } from './shared/InputField'
-import { Section } from './layout/Section'
-import './Login.css'
 
-export const Login = () => {
+import { Main } from '../layout/Main'
+import { Header } from '../layout/header/Header'
+import { InputField } from '../shared/InputField'
+import { Button } from '../shared/Button'
+import { Section } from '../layout/Section'
+import '../styles/Login.css'
+
+export const LoginPage = () => {
     const { register, handleSubmit, formState } = useForm({ mode: 'onChange' })
     const { errors } = formState
     const onSubmit = data => {
@@ -17,7 +18,7 @@ export const Login = () => {
     return (
         <>
             <Header rightElement="logout">Login</Header>
-            <Screen>
+            <Main>
                 <Section>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <InputField
@@ -36,9 +37,9 @@ export const Login = () => {
                         />
                         {errors?.password && <div className="error-message text-sm">This field is required</div>}
 
-                        <button disabled={!formState.isValid} className="btn btn-primary bold" type="submit">
+                        <Button disabled={!formState.isValid} variant="ghost" type="submit" fullWidth>
                             Login
-                        </button>
+                        </Button>
 
                         <div className="link-to">
                             'Or '
@@ -48,7 +49,7 @@ export const Login = () => {
                         </div>
                     </form>
                 </Section>
-            </Screen>
+            </Main>
         </>
     )
 }

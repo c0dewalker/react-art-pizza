@@ -14,12 +14,11 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-export * from './PageNotFound'
-export * from './InputGroup'
-export * from './Login'
-export * from './Signup'
-export * from './PizzaConstructor'
-export * from './PizzaDescription'
-export * from './Orders'
-export * from './PaymentForm'
+export * from './pages/PageNotFound'
+export * from './pages/LoginPage'
+export * from './pages/SignupPage'
+export * from './pages/PizzaConstructor/PizzaConstructor'
+export * from './pages/PizzaConstructor/PizzaDescription'
+export * from './pages/Orders/Orders'
+export * from './pages/PaymentForm'
 export * from './shared/InputField'

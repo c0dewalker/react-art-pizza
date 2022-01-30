@@ -4,16 +4,12 @@
     height: 100%;
 }
 
-.screen {
-    padding: 1rem;
-    background: var(--col-grey-100);
-    flex-grow: 1;
+footer script {
+    display: none;
 }
 
-.section {
-    background: #fff;
-    border-radius: 1rem;
-    padding: 1rem;
+footer:hover script {
+    display: revert;
 }
 
 .btn {

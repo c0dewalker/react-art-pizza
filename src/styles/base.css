@@ -10,6 +10,7 @@ h1, h2, h3, h4 {
 }
 
 ul, ol {
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -33,6 +34,7 @@ img {
 
 :root {
     --col-black: #1F1F33;
+    --col-white: #FFFFFF;
     --col-primary: #00A896;
     --col-primary-dark: #009485;
     --col-secondary: #F3752B;
@@ -113,10 +115,6 @@ h4, .h4 {
 
 /*    LAYOUT      */
 
-.container {
-    max-width: 1024px;
-    margin: 0 auto;
-}
 
 .flex-row {
     display: flex;
