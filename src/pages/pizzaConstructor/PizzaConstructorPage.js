@@ -3,13 +3,13 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { data, BASE_PRICE } from '../../data'
-import { HorizontalContainer } from '../../layout/HorizontalContainer'
-import { Header } from '../../layout/header/Header'
-import { Grid } from '../../shared/Grid'
-import { Main } from '../../layout/Main'
-import { Radio } from '../../shared/Radio'
-import { Checkbox } from '../../shared/Checkbox'
-import { Button } from '../../shared/Button'
+import { HorizontalContainer } from '../../components/layout/HorizontalContainer'
+import { Header } from '../../components/Header'
+import { Grid } from '../../components/layout/Grid'
+import { Main } from '../../components/layout/Main'
+import { Radio } from '../../components/Radio'
+import { Checkbox } from '../../components/Checkbox'
+import { Button } from '../../components/Button'
 import { PizzaDescription } from './PizzaDescription'
 import { useCheckboxValues } from '../../hooks/useCheckboxValues'
 
@@ -25,7 +25,7 @@ const getIngredientPrice = (arr, ingredient) => {
     return arr?.find(({ value }) => value === ingredient)?.price ?? 0
 }
 
-export const PizzaConstructor = () => {
+export const PizzaConstructorPage = () => {
     const [pizzaSize, setPizzaSize] = useState(defaultOptions.size)
     const [dough, setDough] = useState(defaultOptions.dough)
     const [sauce, setSauce] = useState(defaultOptions.sauce)
@@ -53,11 +53,11 @@ export const PizzaConstructor = () => {
                         <LeftColumn>
                             <h1>Put your pizza together</h1>
                             <Grid.Row>
-                                <Radio.Group label="Size" value={pizzaSize} onValueChange={setPizzaSize}>
+                                <Radio.Group label="Size" value={pizzaSize} onValueChange={setPizzaSize} key="size">
                                     <Radio.Item label="30 cm" value={'30 cm'} />
                                     <Radio.Item label="35 cm" value={'35 cm'} />
                                 </Radio.Group>
-                                <Radio.Group label="Dough" value={dough} onValueChange={setDough}>
+                                <Radio.Group label="Dough" value={dough} onValueChange={setDough} key="dough">
                                     <Radio.Item label="thin" value={'thin'} />
                                     <Radio.Item label="fluffy" value={'fluffy'} />
                                 </Radio.Group>

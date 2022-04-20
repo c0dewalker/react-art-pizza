@@ -65,6 +65,7 @@ Radio.Item = function RadioItem({ label, value }) {
                 onClick={() => {
                     onValueChange(value)
                 }}
+                key={value}
             />
         </RadioItemWrapper>
     )

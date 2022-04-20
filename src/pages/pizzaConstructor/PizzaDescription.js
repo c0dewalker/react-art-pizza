@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { Text } from '../../shared/Text'
+import { Text } from '../../components/Text'
 
-import plate from '../../assets/plate.png'
+import plate from '../../assets/images/plate.png'
 
 export const PizzaDescription = ({ pizza }) => {
     const { pizzaSize, dough, sauce, cheese, vegetables, meat } = pizza

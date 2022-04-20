@@ -1,10 +1,10 @@
-import { Main } from '../layout/Main'
-import { Header } from '../layout/header/Header'
-import { InputField } from '../index'
-import { Divider } from '../layout/Devider'
-import '../styles/PaymentForm.css'
+import { Main } from '../../components/layout/Main'
+import { Header } from '../../components/Header'
+import { InputField } from '../../index'
+import { Divider } from '../../components/layout/Devider'
+import './CheckoutPage.css'
 
-export const PaymentForm = () => {
+export const CheckoutPage = () => {
     return (
         <>
             <Header>Complete your order</Header>

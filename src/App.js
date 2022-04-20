@@ -1,7 +1,7 @@
-import { PizzaConstructor } from './pages/PizzaConstructor/PizzaConstructor'
+import { PizzaConstructorPage } from './pages/pizzaConstructor/PizzaConstructorPage'
 import { Switch, Route } from 'react-router-dom'
-import { LoginPage, SignupPage, Orders, PageNotFound } from './'
-import { PaymentForm } from './pages/PaymentForm'
+import { LoginPage, SignupPage, OrdersPage, PageNotFound } from './'
+import { CheckoutPage } from './pages/checkout/CheckoutPage'
 
 export const App = () => {
     return (
@@ -14,13 +14,13 @@ export const App = () => {
                     <SignupPage />
                 </Route>
                 <Route path="/orders">
-                    <Orders />
+                    <OrdersPage />
                 </Route>
                 <Route path="/checkout">
-                    <PaymentForm />
+                    <CheckoutPage />
                 </Route>
                 <Route exact path="/">
-                    <PizzaConstructor />
+                    <PizzaConstructorPage />
                 </Route>
                 <Route>
                     <PageNotFound />

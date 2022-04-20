@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Header } from '../layout/header/Header'
-import { Main } from '../layout/Main'
-import { Section } from '../layout/Section'
-import { InputField } from '../shared/InputField'
+import { Header } from '../../components/Header'
+import { Main } from '../../components/layout/Main'
+import { Section } from '../../components/layout/Section'
+import { InputField } from '../../components/InputField'
 import { useForm } from 'react-hook-form'
 
 export const SignupPage = () => {

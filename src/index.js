@@ -15,10 +15,10 @@ ReactDOM.render(
 )
 
 export * from './pages/PageNotFound'
-export * from './pages/LoginPage'
-export * from './pages/SignupPage'
-export * from './pages/PizzaConstructor/PizzaConstructor'
-export * from './pages/PizzaConstructor/PizzaDescription'
-export * from './pages/Orders/Orders'
-export * from './pages/PaymentForm'
-export * from './shared/InputField'
+export * from './pages/login/LoginPage'
+export * from './pages/signup/SignupPage'
+export * from './pages/pizzaConstructor/PizzaConstructorPage'
+export * from './pages/pizzaConstructor/PizzaDescription'
+export * from './pages/orders/OrdersPage'
+export * from './pages/checkout/CheckoutPage'
+export * from './components/InputField'

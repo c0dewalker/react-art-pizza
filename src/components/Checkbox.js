@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 import styled, { css } from 'styled-components'
 
-import checkboxTick from '../assets/checkboxTick.svg'
+import checkboxTick from '../assets/images/checkboxTick.svg'
 
 const CheckboxGroupContext = createContext()
 
@@ -42,7 +42,7 @@ const Checkboxes = styled.ul`
     width: max-content;
 `
 
-Checkbox.Item = function Item({ value, title, subtitle, image }) {
+Checkbox.Item = function Item({ value, title, subtitle }) {
     const id = `checkbox_${value}`
     const { selectedValues, onValueChange } = useCheckboxGroupContext()
     return (

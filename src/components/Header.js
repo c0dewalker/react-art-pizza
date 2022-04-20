@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-import {HorizontalContainer} from '../HorizontalContainer'
-import { Logo } from './logo/Logo'
-import arrowBackIcon from './icn_arrow-left.svg'
-import closeIcon from './icn_error.svg'
-import accountIcon from './icn_account.svg'
-import logoutIcon from './icn_logout.svg'
+import { HeaderLogo } from './HeaderLogo'
+import arrowBackIcon from '../assets/icons/icn_arrow-left.svg'
+import closeIcon from '../assets/icons/icn_error.svg'
+import accountIcon from '../assets/icons/icn_account.svg'
+import logoutIcon from '../assets/icons/icn_logout.svg'
 import './Header.css'
 
 export const Header = ({
@@ -18,7 +17,7 @@ export const Header = ({
             <HeaderWrapper>
                 <div className="leftElement">
                     {hasArrowBack && arrowBackIcon}
-                    {hasLogo ? <Logo /> : children && <h1 className="h3 bold">{children}</h1>}
+                    {hasLogo ? <HeaderLogo /> : children && <h1 className="h3 bold">{children}</h1>}
                 </div>
                 <RightHeaderElement>
                     {rightElement === 'close' && <img src={closeIcon} alt="close icon" />}
@@ -34,7 +33,7 @@ const StyledHeader = styled.header`
     background-color: var(--col-white);
     top: 0;
     width: 100%;
-    box-shadow: 0px 0px 2px 0px #2E313726, 0px 3px 4px 0px #2E31370D;
+    box-shadow: 0 0 2px 0 #2E313726, 0 3px 4px 0 #2E31370D;
     z-index: 2;
 `
 

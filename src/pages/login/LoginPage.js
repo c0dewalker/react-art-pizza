@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
-import { Main } from '../layout/Main'
-import { Header } from '../layout/header/Header'
-import { InputField } from '../shared/InputField'
-import { Button } from '../shared/Button'
-import { Section } from '../layout/Section'
-import '../styles/Login.css'
+import { Main } from '../../components/layout/Main'
+import { Header } from '../../components/Header'
+import { InputField } from '../../components/InputField'
+import { Button } from '../../components/Button'
+import { Section } from '../../components/layout/Section'
+import './Login.css'
 
 export const LoginPage = () => {
     const { register, handleSubmit, formState } = useForm({ mode: 'onChange' })

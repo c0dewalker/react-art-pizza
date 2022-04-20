@@ -1,4 +1,4 @@
-export const Orders = () => {
+export const OrdersPage = () => {
     return (
         <>
             <h1>Your orders</h1>

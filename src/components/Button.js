@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/macro'
+import './Button.css'
 
 export const Button = props => {
     return <StyledButton {...props}>{props.children}</StyledButton>
