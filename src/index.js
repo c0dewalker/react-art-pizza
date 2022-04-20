@@ -6,12 +6,12 @@ import './styles/base.css'
 import './styles/styles.css'
 
 ReactDOM.render(
-    <BrowserRouter>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </BrowserRouter>,
-    document.getElementById('root')
+   <BrowserRouter>
+      <React.StrictMode>
+         <App />
+      </React.StrictMode>
+   </BrowserRouter>,
+   document.getElementById('root')
 )
 
 export * from './pages/PageNotFound'
