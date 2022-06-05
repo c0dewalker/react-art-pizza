@@ -23,6 +23,11 @@ const Wrapper = styled.div`
    &:not(:first-of-type) {
       margin-top: 1rem;
    }
+
+   & label {
+      display: inline-block;
+      margin-bottom: 6px;
+   }
 `
 const Input = styled.input`
    display: block;

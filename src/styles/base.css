@@ -87,48 +87,48 @@ h4,
    font-weight: 400;
 }
 
-h1,
-.h1 {
-   font-size: 28px;
-   line-height: 36px;
-   font-weight: 800;
-}
+/*h1,*/
+/*.h1 {*/
+/*   font-size: 28px;*/
+/*   line-height: 36px;*/
+/*   font-weight: 800;*/
+/*}*/
 
-h2,
-.h2 {
-   font-size: 24px;
-   line-height: 32px;
-}
+/*h2,*/
+/*.h2 {*/
+/*   font-size: 24px;*/
+/*   line-height: 32px;*/
+/*}*/
 
-h3,
-.h3 {
-   font-size: 20px;
-   line-height: 24px;
-}
+/*h3,*/
+/*.h3 {*/
+/*   font-size: 20px;*/
+/*   line-height: 24px;*/
+/*}*/
 
-h4,
-.h4 {
-   font-size: 16px;
-   line-height: 24px;
-}
+/*h4,*/
+/*.h4 {*/
+/*   font-size: 16px;*/
+/*   line-height: 24px;*/
+/*}*/
 
-.text-sm {
-   font-size: 14px;
-   line-height: 20px;
-}
+/*.text-sm {*/
+/*   font-size: 14px;*/
+/*   line-height: 20px;*/
+/*}*/
 
-.text-xs {
-   font-size: 12px;
-   line-height: 18px;
-}
+/*.text-xs {*/
+/*   font-size: 12px;*/
+/*   line-height: 18px;*/
+/*}*/
 
-.bold {
-   font-weight: 800;
-}
+/*.bold {*/
+/*   font-weight: 800;*/
+/*}*/
 
-.medium {
-   font-weight: 600;
-}
+/*.medium {*/
+/*   font-weight: 600;*/
+/*}*/
 
 /*    LAYOUT      */
 
@@ -136,6 +136,7 @@ h4,
    display: flex;
    align-items: center;
 }
+
 .flex-row > * {
    width: 100%;
 }

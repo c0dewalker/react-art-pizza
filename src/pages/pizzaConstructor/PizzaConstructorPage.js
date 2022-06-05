@@ -1,15 +1,8 @@
 import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { data, BASE_PRICE } from '../../data'
-import { HorizontalContainer } from '../../components/layout/HorizontalContainer'
-import { Header } from '../../components/Header'
-import { Grid } from '../../components/layout/Grid'
-import { Main } from '../../components/layout/Main'
-import { Radio } from '../../components/Radio'
-import { Checkbox } from '../../components/Checkbox'
-import { Button } from '../../components/Button'
+import { Header, Radio, Checkbox, Grid, PageLayout, Title } from '../../components'
 import { PizzaDescription } from './PizzaDescription'
 import { useCheckboxValues } from '../../hooks/useCheckboxValues'
 
@@ -33,8 +26,6 @@ export const PizzaConstructorPage = () => {
    const [vegetables, setVegetables] = useCheckboxValues(defaultOptions.vegetables)
    const [meat, setMeat] = useCheckboxValues(defaultOptions.meat)
 
-   const history = useHistory()
-
    const getPizzaPrice = () => {
       const ingredientsData = Object.values(data).reduce((acc, group) => acc.concat(...group), [])
       const extraPrice = [pizzaSize, dough, sauce, ...cheese, ...vegetables, ...meat].reduce(
@@ -47,80 +38,73 @@ export const PizzaConstructorPage = () => {
    return (
       <>
          <Header hasLogo={true} rightElement="account" />
-         <Main>
-            <HorizontalContainer>
-               <PizzaConstructorWrapper>
-                  <LeftColumn>
-                     <h1>Put your pizza together</h1>
-                     <Grid.Row>
-                        <Radio.Group label="Size" value={pizzaSize} onValueChange={setPizzaSize} key="size">
-                           <Radio.Item label="30 cm" value={'30 cm'} />
-                           <Radio.Item label="35 cm" value={'35 cm'} />
-                        </Radio.Group>
-                        <Radio.Group label="Dough" value={dough} onValueChange={setDough} key="dough">
-                           <Radio.Item label="thin" value={'thin'} />
-                           <Radio.Item label="fluffy" value={'fluffy'} />
-                        </Radio.Group>
-                     </Grid.Row>
-
-                     <Radio.Group label="Choose Sauce" value={sauce} onValueChange={setSauce} separatedButtons>
-                        {data.sauces.map(sauce => (
-                           <Radio.Item label={sauce.value} value={sauce.value} />
-                        ))}
+         <PageLayout background="white">
+            <PizzaConstructorWrapper>
+               <PizzaConstructorColumn>
+                  <Title level={1} size='2xl' bold>Put your pizza together</Title>
+                  <Grid.Row>
+                     <Radio.Group label="Size" value={pizzaSize} onValueChange={setPizzaSize} key="size">
+                        <Radio.Item label="30 cm" value={'30 cm'} />
+                        <Radio.Item label="35 cm" value={'35 cm'} />
                      </Radio.Group>
+                     <Radio.Group label="Dough" value={dough} onValueChange={setDough} key="dough">
+                        <Radio.Item label="thin" value={'thin'} />
+                        <Radio.Item label="fluffy" value={'fluffy'} />
+                     </Radio.Group>
+                  </Grid.Row>
 
-                     <Checkbox.Group label="Add cheese" selectedValues={cheese} onValueChange={setCheese}>
-                        {data.cheese.map(({ value, price }) => (
-                           <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
-                        ))}
-                     </Checkbox.Group>
+                  <Radio.Group label="Choose Sauce" value={sauce} onValueChange={setSauce} separatedButtons>
+                     {data.sauces.map(sauce => (
+                        <Radio.Item label={sauce.value} value={sauce.value} />
+                     ))}
+                  </Radio.Group>
 
-                     <Checkbox.Group label="Add vegetables" selectedValues={vegetables} onValueChange={setVegetables}>
-                        {data.vegetables.map(({ value, price }) => (
-                           <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
-                        ))}
-                     </Checkbox.Group>
+                  <Checkbox.Group label="Add cheese" selectedValues={cheese} onValueChange={setCheese}>
+                     {data.cheese.map(({ value, price }) => (
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                     ))}
+                  </Checkbox.Group>
 
-                     <Checkbox.Group label="Add meat" selectedValues={meat} onValueChange={setMeat}>
-                        {data.meat.map(({ value, price }) => (
-                           <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
-                        ))}
-                     </Checkbox.Group>
-                  </LeftColumn>
+                  <Checkbox.Group label="Add vegetables" selectedValues={vegetables} onValueChange={setVegetables}>
+                     {data.vegetables.map(({ value, price }) => (
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                     ))}
+                  </Checkbox.Group>
 
-                  <RightColumn>
-                     <FixedPositionWrapper>
-                        <PizzaDescription pizza={{ pizzaSize, dough, sauce, cheese, vegetables, meat }} data={data} />
-                        <OrderButton primary onClick={() => history.push('/checkout')}>
-                           Buy for {getPizzaPrice()} rubel
-                        </OrderButton>
-                     </FixedPositionWrapper>
-                  </RightColumn>
-               </PizzaConstructorWrapper>
-            </HorizontalContainer>
-         </Main>
+                  <Checkbox.Group label="Add meat" selectedValues={meat} onValueChange={setMeat}>
+                     {data.meat.map(({ value, price }) => (
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                     ))}
+                  </Checkbox.Group>
+               </PizzaConstructorColumn>
+
+               <PizzaDescriptionColumn>
+                  <FixedPositionWrapper>
+                     <PizzaDescription
+                        pizza={{ pizzaSize, dough, sauce, cheese, vegetables, meat }}
+                        price={getPizzaPrice()}
+                     />
+                  </FixedPositionWrapper>
+               </PizzaDescriptionColumn>
+            </PizzaConstructorWrapper>
+         </PageLayout>
       </>
    )
 }
 
 const PizzaConstructorWrapper = styled(Grid.Row)`
-   padding: 32px 71px;
    position: relative;
    gap: 32px;
 `
 
-const LeftColumn = styled(Grid.Column)`
+const PizzaConstructorColumn = styled(Grid.Column)`
    flex: 2;
 `
-const RightColumn = styled(Grid.Column)`
+const PizzaDescriptionColumn = styled(Grid.Column)`
    min-width: 350px;
 `
 
 const FixedPositionWrapper = styled.div`
    position: fixed;
    max-width: 350px;
-`
-
-const OrderButton = styled(Button)`
-   margin-top: 32px;
 `

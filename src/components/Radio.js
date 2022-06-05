@@ -19,7 +19,7 @@ Radio.Group = function RadioGroup({ label, value, onValueChange, children, separ
    return (
       <RadioGroupWrapper>
          <RadioContext.Provider value={{ selectedValue: value, onValueChange, separatedButtons }}>
-            {label && <legend>{label}</legend>}
+            {label && <GroupTitle>{label}</GroupTitle>}
             <RadioButtons separatedButtons={separatedButtons}>{children}</RadioButtons>
          </RadioContext.Provider>
       </RadioGroupWrapper>
@@ -31,6 +31,10 @@ const RadioGroupWrapper = styled.fieldset`
    user-select: none;
    margin: 32px 0 0 0;
    padding: 0;
+`
+
+const GroupTitle = styled.legend`
+   margin-bottom: 8px;
 `
 
 const RadioButtons = styled.div`

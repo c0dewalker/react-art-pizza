@@ -3,15 +3,3 @@
    flex-direction: column;
    height: 100%;
 }
-
-footer script {
-   display: none;
-}
-
-footer:hover script {
-   display: revert;
-}
-
-.link {
-   cursor: pointer;
-}

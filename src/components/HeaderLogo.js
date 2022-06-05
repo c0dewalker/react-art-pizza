@@ -1,9 +1,31 @@
+import styled from "styled-components";
 import logoIcon from '../assets/images/Logo.svg'
 
 export const HeaderLogo = () => (
-   <div className="logo">
-      <img className="logo-icon" src={logoIcon} alt="Art Pizza logo" />
-      <span className="logo-text logo-text--primary">art</span>
-      <span className="logo-text logo-text--secondary">pizza</span>
-   </div>
+   <LogoStyled>
+      <img src={logoIcon} alt="Art Pizza logo" />
+      <span>art</span>
+      <span>pizza</span>
+   </LogoStyled>
 )
+
+const LogoStyled = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  line-height: 2.4rem;
+  font-size: 1.8rem;
+  
+  & img {
+    margin-right: 0.5rem;
+  }
+  
+  & span:first-of-type {
+    color: var(--col-primary);
+    margin-right: 0.2rem;
+  }
+  
+  & span:nth-of-type(2) {
+    color: var(--col-secondary);
+  }
+`

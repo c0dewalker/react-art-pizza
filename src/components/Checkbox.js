@@ -51,7 +51,7 @@ Checkbox.Item = function Item({ value, title, subtitle }) {
             {title}
          </CheckboxTitle>
          <CheckboxFooter>
-            <CheckboxSubtitle>{subtitle}</CheckboxSubtitle>
+            <span>{subtitle}</span>
             <NativeCheckbox id={id} checked={selectedValues.includes(value)} onChange={() => {}} />
             <CustomCheckbox />
          </CheckboxFooter>
@@ -64,6 +64,7 @@ const CheckboxItem = styled.li`
    position: relative;
    min-width: 112px;
    padding: 70px 12px 12px;
+   border: 2px solid transparent;
    border-radius: 12px;
    background-color: var(--col-white);
    color: var(--col-black);
@@ -74,7 +75,7 @@ const CheckboxItem = styled.li`
    ${({ checked }) =>
       checked &&
       css`
-         border: 2px solid var(--col-primary);
+         border-color: var(--col-primary);
       `}
 `
 
@@ -89,8 +90,6 @@ const CheckboxFooter = styled.div`
    display: flex;
    justify-content: space-between;
 `
-
-const CheckboxSubtitle = styled.span``
 
 const NativeCheckbox = styled.input.attrs({ type: 'checkbox' })`
    appearance: none;

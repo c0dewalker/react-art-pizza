@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 import { HeaderLogo } from './HeaderLogo'
+import { Title } from './Title'
 import arrowBackIcon from '../assets/icons/icn_arrow-left.svg'
 import closeIcon from '../assets/icons/icn_error.svg'
 import accountIcon from '../assets/icons/icn_account.svg'
 import logoutIcon from '../assets/icons/icn_logout.svg'
-import './Header.css'
 
 export const Header = ({
    hasArrowBack = false,
@@ -14,17 +14,17 @@ export const Header = ({
    children = ''
 } = {}) => (
    <StyledHeader>
-      <HeaderWrapper>
-         <div className="leftElement">
-            {hasArrowBack && arrowBackIcon}
-            {hasLogo ? <HeaderLogo /> : children && <h1 className="h3 bold">{children}</h1>}
-         </div>
-         <RightHeaderElement>
-            {rightElement === 'close' && <img src={closeIcon} alt="close icon" />}
-            {rightElement === 'account' && <img src={accountIcon} alt="account icon" />}
-            {rightElement === 'logout' && <img src={logoutIcon} alt="logo icon" />}
-         </RightHeaderElement>
-      </HeaderWrapper>
+      <div>
+         {hasArrowBack && arrowBackIcon}
+         {hasLogo && <HeaderLogo />}
+      </div>
+      {children && (<Title level={1} bold>{children}</Title>
+      )}
+      <div>
+         {rightElement === 'close' && <img src={closeIcon} alt="close icon" />}
+         {rightElement === 'account' && <img src={accountIcon} alt="account icon" />}
+         {rightElement === 'logout' && <img src={logoutIcon} alt="logo icon" />}
+      </div>
    </StyledHeader>
 )
 
@@ -35,14 +35,9 @@ const StyledHeader = styled.header`
    width: 100%;
    box-shadow: 0 0 2px 0 #2e313726, 0 3px 4px 0 #2e31370d;
    z-index: 2;
-`
-
-const HeaderWrapper = styled.div`
-   min-height: 3.5rem;
+   min-height: 4.5rem;
    display: flex;
+   justify-content: space-between;
    align-items: center;
    padding: 1rem 2rem;
-`
-const RightHeaderElement = styled.div`
-   margin-left: auto;
 `

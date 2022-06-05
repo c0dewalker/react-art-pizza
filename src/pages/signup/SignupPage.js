@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Header } from '../../components/Header'
-import { Main } from '../../components/layout/Main'
-import { Section } from '../../components/layout/Section'
-import { InputField } from '../../components/InputField'
+import { Header, PageLayout, InputField, Button } from '../../components'
 import { useForm } from 'react-hook-form'
+import { AuthForm } from '../login/LoginPage'
+
 
 export const SignupPage = () => {
    const { register, handleSubmit, formState } = useForm()
@@ -16,8 +15,8 @@ export const SignupPage = () => {
    return (
       <>
          <Header rightElement="logout">Signup</Header>
-         <Main>
-            <Section>
+         <PageLayout>
+            <AuthForm>
                <form onSubmit={handleSubmit(onSubmit)}>
                   <InputField
                      type="email"
@@ -43,19 +42,19 @@ export const SignupPage = () => {
                   />
                   {errors?.passwordRepeat && <div className="error-message text-sm">This field is required</div>}
 
-                  <button disabled={Object.keys(errors).length > 0} className="btn btn-primary bold" type="submit">
+                  <Button disabled={Object.keys(errors).length > 0} type="submit" fullWidth>
                      Signup
-                  </button>
+                  </Button>
 
                   <div className="link-to">
                      Or{' '}
-                     <Link className="link black" to="/login">
+                     <Link className="link" to="/login">
                         login
                      </Link>
                   </div>
                </form>
-            </Section>
-         </Main>
+            </AuthForm>
+         </PageLayout>
       </>
    )
 }
