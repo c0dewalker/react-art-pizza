@@ -6,19 +6,11 @@ import { Header, Radio, Checkbox, Grid, PageLayout, Title } from '../../componen
 import { PizzaDescription } from './PizzaDescription'
 import { useCheckboxValues } from '../../hooks/useCheckboxValues'
 
-const defaultOptions = {
-   size: '30 cm',
-   dough: 'fluffy',
-   sauce: 'tomato',
-   cheese: ['dor blue'],
-   vegetables: ['mushrooms'],
-   meat: []
-}
 const getIngredientPrice = (arr, ingredient) => {
    return arr?.find(({ value }) => value === ingredient)?.price ?? 0
 }
 
-export const PizzaConstructorPage = () => {
+export const PizzaConstructorPage = ({ defaultOptions = {}}) => {
    const [pizzaSize, setPizzaSize] = useState(defaultOptions.size)
    const [dough, setDough] = useState(defaultOptions.dough)
    const [sauce, setSauce] = useState(defaultOptions.sauce)
@@ -41,39 +33,44 @@ export const PizzaConstructorPage = () => {
          <PageLayout background="white">
             <PizzaConstructorWrapper>
                <PizzaConstructorColumn>
-                  <Title level={1} size='2xl' bold>Put your pizza together</Title>
+                  <Title level={1} size="2xl" bold>
+                     Put your pizza together
+                  </Title>
                   <Grid.Row>
                      <Radio.Group label="Size" value={pizzaSize} onValueChange={setPizzaSize} key="size">
-                        <Radio.Item label="30 cm" value={'30 cm'} />
-                        <Radio.Item label="35 cm" value={'35 cm'} />
+                        <Radio.Item label="30 cm" value={'30 cm'} key={'30 cm'} />
+                        <Radio.Item label="35 cm" value={'35 cm'} key={'35 cm'} />
                      </Radio.Group>
                      <Radio.Group label="Dough" value={dough} onValueChange={setDough} key="dough">
-                        <Radio.Item label="thin" value={'thin'} />
-                        <Radio.Item label="fluffy" value={'fluffy'} />
+                        <Radio.Item label="thin" value={'thin'} key={'thin'} />
+                        <Radio.Item label="fluffy" value={'fluffy'} key={'fluffy'} />
                      </Radio.Group>
                   </Grid.Row>
 
-                  <Radio.Group label="Choose Sauce" value={sauce} onValueChange={setSauce} separatedButtons>
-                     {data.sauces.map(sauce => (
-                        <Radio.Item label={sauce.value} value={sauce.value} />
-                     ))}
+                  <Radio.Group label="Choose Sauce" value={sauce} onValueChange={setSauce} separatedButtons key="sauce">
+                     {data.sauces.map(({ value }) => <Radio.Item label={value} value={value} key={value} />)}
                   </Radio.Group>
 
-                  <Checkbox.Group label="Add cheese" selectedValues={cheese} onValueChange={setCheese}>
+                  <Checkbox.Group label="Add cheese" selectedValues={cheese} onValueChange={setCheese} key="cheese">
                      {data.cheese.map(({ value, price }) => (
-                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} key={value} />
                      ))}
                   </Checkbox.Group>
 
-                  <Checkbox.Group label="Add vegetables" selectedValues={vegetables} onValueChange={setVegetables}>
+                  <Checkbox.Group
+                     label="Add vegetables"
+                     selectedValues={vegetables}
+                     onValueChange={setVegetables}
+                     key="vegetables"
+                  >
                      {data.vegetables.map(({ value, price }) => (
-                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} key={value}/>
                      ))}
                   </Checkbox.Group>
 
-                  <Checkbox.Group label="Add meat" selectedValues={meat} onValueChange={setMeat}>
+                  <Checkbox.Group label="Add meat" selectedValues={meat} onValueChange={setMeat} key="meat">
                      {data.meat.map(({ value, price }) => (
-                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} />
+                        <Checkbox.Item value={value} title={value} subtitle={price + ' ₽'} key={value}/>
                      ))}
                   </Checkbox.Group>
                </PizzaConstructorColumn>

@@ -62,11 +62,11 @@ Radio.Item = function RadioItem({ label, value }) {
    return (
       <RadioItemWrapper checked={value === selectedValue} separatedButtons={separatedButtons} key={value}>
          {label ? label : ''}
-         <button
+         <input
             type="radio"
             value={value}
             checked={value === selectedValue}
-            onClick={() => {
+            onChange={() => {
                onValueChange(value)
             }}
             key={value}
@@ -96,7 +96,7 @@ const RadioItemWrapper = styled.label`
          border: 2px solid var(--col-primary) !important;
          box-shadow: none;
       `}
-  & button {
+  & input {
       display: none;
    }
 `

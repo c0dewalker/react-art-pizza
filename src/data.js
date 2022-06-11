@@ -1,5 +1,14 @@
 export const BASE_PRICE = 200
 
+export const defaultOptions = {
+   size: '30 cm',
+   dough: 'fluffy',
+   sauce: 'tomato',
+   cheese: ['dor blue'],
+   vegetables: ['mushrooms'],
+   meat: []
+}
+
 export const data = {
    sizes: [
       { value: '30 cm', price: 0 },

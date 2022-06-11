@@ -2,6 +2,7 @@ import { PizzaConstructorPage } from './pages/pizzaConstructor/PizzaConstructorP
 import { Switch, Route } from 'react-router-dom'
 import { LoginPage, SignupPage, OrdersPage, PageNotFound } from './'
 import { CheckoutPage } from './pages/checkout/CheckoutPage'
+import { defaultOptions } from './data'
 
 export const App = () => {
    return (
@@ -20,7 +21,7 @@ export const App = () => {
                <CheckoutPage />
             </Route>
             <Route exact path="/">
-               <PizzaConstructorPage />
+               <PizzaConstructorPage defaultOptions={defaultOptions} />
             </Route>
             <Route>
                <PageNotFound />
